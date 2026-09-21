@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 115" width="100%" height="115">
+  <defs>
+    <linearGradient id="dnsxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050e14" />
+      <stop offset="50%" stop-color="#0b1b24" />
+      <stop offset="100%" stop-color="#06121a" />
+    </linearGradient>
+
+    <linearGradient id="dnsxBorder" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#10b981" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0.7" />
+    </linearGradient>
+
+    <style>
+      .mono { font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      @keyframes signalPulseEmerald {
+        0%, 100% { opacity: 0.9; }
+        50% { opacity: 0.35; }
+      }
+      .signal-e { animation: signalPulseEmerald 3s ease-in-out infinite; }
+      @media (prefers-reduced-motion: reduce) {
+        .signal-e { animation: none !important; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background Panel -->
+  <rect x="2" y="2" width="846" height="111" rx="8" fill="url(#dnsxGrad)" stroke="url(#dnsxBorder)" stroke-width="1.2" />
+
+  <!-- Corner Brackets -->
+  <path d="M 2 16 L 2 2 L 16 2" fill="none" stroke="#00e5ff" stroke-width="2" />
+  <path d="M 834 2 L 848 2 L 848 16" fill="none" stroke="#10b981" stroke-width="2" />
+  <path d="M 2 99 L 2 113 L 16 113" fill="none" stroke="#00e5ff" stroke-width="2" />
+  <path d="M 834 113 L 848 113 L 848 99" fill="none" stroke="#10b981" stroke-width="2" />
+
+  <!-- Module Tag & Status -->
+  <g transform="translate(24, 25)">
+    <rect x="0" y="0" width="86" height="20" rx="4" fill="#00e5ff" fill-opacity="0.12" stroke="#00e5ff" stroke-opacity="0.4" stroke-width="1" />
+    <text class="mono" x="7" y="14" font-size="10" font-weight="700" fill="#00e5ff" letter-spacing="1">SYSTEM // 03</text>
+
+    <!-- Project Title -->
+    <text class="sans" x="98" y="16" font-size="18" font-weight="800" fill="#f8fafc" letter-spacing="0.5">DNS_X</text>
+    <text class="mono" x="168" y="15" font-size="11" font-weight="500" fill="#94a3b8">AI-Powered DNS Infrastructure Monitoring System</text>
+
+    <!-- Status Badge -->
+    <rect x="702" y="0" width="98" height="20" rx="4" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-opacity="0.5" stroke-width="1" />
+    <circle class="signal-e" cx="714" cy="10" r="3.5" fill="#38bdf8" />
+    <text class="mono" x="724" y="14" font-size="10" font-weight="700" fill="#bae6fd" letter-spacing="0.8">PROTOTYPE</text>
+  </g>
+
+  <!-- Technical Spec Summary -->
+  <g transform="translate(24, 62)">
+    <text class="mono" font-size="11" fill="#cbd5e1">
+      <tspan font-weight="700" fill="#38bdf8">CORE PIPELINE:</tspan> Query Telemetry Collector <tspan fill="#475569">→</tspan> Supabase Timeseries <tspan fill="#475569">→</tspan> XGBoost Anomaly Model <tspan fill="#475569">→</tspan> React Dashboard
+    </text>
+    <text class="mono" y="24" font-size="10.5" fill="#64748b">
+      STACK: <tspan fill="#94a3b8">React</tspan> • <tspan fill="#94a3b8">Node.js</tspan> • <tspan fill="#94a3b8">XGBoost (ML Anomaly)</tspan> • <tspan fill="#94a3b8">Supabase</tspan>
+      <tspan fill="#334155"> | </tspan>
+      DOMAIN: <tspan fill="#10b981">INFRASTRUCTURE AI</tspan>
+    </text>
+  </g>
+</svg>

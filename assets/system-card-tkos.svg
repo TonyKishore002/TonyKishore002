@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 115" width="100%" height="115">
+  <defs>
+    <linearGradient id="tkosGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070d17" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#0a0f1d" />
+    </linearGradient>
+
+    <linearGradient id="tkosBorder" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.8" />
+      <stop offset="40%" stop-color="#1e293b" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.7" />
+    </linearGradient>
+
+    <style>
+      .mono { font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      @keyframes signalPulse {
+        0%, 100% { opacity: 0.9; }
+        50% { opacity: 0.3; }
+      }
+      .signal { animation: signalPulse 3s ease-in-out infinite; }
+      @media (prefers-reduced-motion: reduce) {
+        .signal { animation: none !important; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background Panel -->
+  <rect x="2" y="2" width="846" height="111" rx="8" fill="url(#tkosGrad)" stroke="url(#tkosBorder)" stroke-width="1.2" />
+
+  <!-- Corner Brackets -->
+  <path d="M 2 16 L 2 2 L 16 2" fill="none" stroke="#00e5ff" stroke-width="2" />
+  <path d="M 834 2 L 848 2 L 848 16" fill="none" stroke="#00e5ff" stroke-width="2" />
+  <path d="M 2 99 L 2 113 L 16 113" fill="none" stroke="#00e5ff" stroke-width="2" />
+  <path d="M 834 113 L 848 113 L 848 99" fill="none" stroke="#00e5ff" stroke-width="2" />
+
+  <!-- Module Tag & Status -->
+  <g transform="translate(24, 25)">
+    <rect x="0" y="0" width="86" height="20" rx="4" fill="#00e5ff" fill-opacity="0.12" stroke="#00e5ff" stroke-opacity="0.4" stroke-width="1" />
+    <text class="mono" x="7" y="14" font-size="10" font-weight="700" fill="#00e5ff" letter-spacing="1">SYSTEM // 01</text>
+
+    <!-- Project Title -->
+    <text class="sans" x="98" y="16" font-size="18" font-weight="800" fill="#f8fafc" letter-spacing="0.5">TK_OS</text>
+    <text class="mono" x="168" y="15" font-size="11" font-weight="500" fill="#94a3b8">Windows-Integrated Local AI Environment</text>
+
+    <!-- Status Badge -->
+    <rect x="686" y="0" width="114" height="20" rx="4" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-opacity="0.4" stroke-width="1" />
+    <circle class="signal" cx="698" cy="10" r="3.5" fill="#10b981" />
+    <text class="mono" x="708" y="14" font-size="10" font-weight="700" fill="#10b981" letter-spacing="0.8">ACTIVE REPO</text>
+  </g>
+
+  <!-- Technical Spec Summary -->
+  <g transform="translate(24, 62)">
+    <text class="mono" font-size="11" fill="#cbd5e1">
+      <tspan font-weight="700" fill="#00e5ff">CORE PIPELINE:</tspan> Voice Intake / Wake Word <tspan fill="#475569">→</tspan> Intent Parser <tspan fill="#475569">→</tspan> Planner Engine <tspan fill="#475569">→</tspan> Safety Gate <tspan fill="#475569">→</tspan> OS Tools
+    </text>
+    <text class="mono" y="24" font-size="10.5" fill="#64748b">
+      STACK: <tspan fill="#94a3b8">Python</tspan> • <tspan fill="#94a3b8">FastAPI</tspan> • <tspan fill="#94a3b8">React</tspan> • <tspan fill="#94a3b8">Ollama (Local LLM)</tspan> • <tspan fill="#94a3b8">Windows Automation</tspan>
+      <tspan fill="#334155"> | </tspan>
+      MODE: <tspan fill="#38bdf8">LOCAL-FIRST</tspan>
+    </text>
+  </g>
+</svg>

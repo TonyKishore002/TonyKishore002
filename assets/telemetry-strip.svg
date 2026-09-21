@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 46" width="100%" height="46">
+  <defs>
+    <linearGradient id="barBorder" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#a855f7" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.6" />
+    </linearGradient>
+
+    <style>
+      .mono { font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', 'Cascadia Code', monospace; }
+      @keyframes softPulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.4; }
+      }
+      .beacon { animation: softPulse 2.5s ease-in-out infinite; }
+      @media (prefers-reduced-motion: reduce) {
+        .beacon { animation: none !important; }
+      }
+    </style>
+  </defs>
+
+  <!-- Container Box -->
+  <rect x="2" y="2" width="896" height="42" rx="6" fill="#080c14" stroke="url(#barBorder)" stroke-width="1.2" />
+
+  <!-- Corner Brackets -->
+  <path d="M 2 10 L 2 2 L 10 2" fill="none" stroke="#00e5ff" stroke-width="2" />
+  <path d="M 890 2 L 898 2 L 898 10" fill="none" stroke="#10b981" stroke-width="2" />
+  <path d="M 2 36 L 2 44 L 10 44" fill="none" stroke="#00e5ff" stroke-width="2" />
+  <path d="M 890 44 L 898 44 L 898 36" fill="none" stroke="#10b981" stroke-width="2" />
+
+  <!-- Status Light -->
+  <circle class="beacon" cx="24" cy="23" r="4.5" fill="#10b981" />
+  <circle cx="24" cy="23" r="7" fill="none" stroke="#10b981" stroke-width="0.7" stroke-opacity="0.5" />
+
+  <!-- Telemetry Content Stream -->
+  <g transform="translate(42, 27)">
+    <text class="mono" font-size="11" font-weight="600" fill="#94a3b8">
+      NODE: <tspan fill="#00e5ff">TK-01</tspan>
+      <tspan fill="#334155">   |   </tspan>
+      CORE: <tspan fill="#a855f7">LOCAL-AI</tspan>
+      <tspan fill="#334155">   |   </tspan>
+      MODE: <tspan fill="#38bdf8">LOCAL-FIRST</tspan>
+      <tspan fill="#334155">   |   </tspan>
+      STATUS: <tspan fill="#10b981">ONLINE</tspan>
+      <tspan fill="#334155">   |   </tspan>
+      PROFILE: <tspan fill="#f1f5f9">2026</tspan>
+    </text>
+  </g>
+
+  <!-- Right Side Protocol Tag -->
+  <text class="mono" x="874" y="27" text-anchor="end" font-size="10.5" font-weight="600" fill="#475569" letter-spacing="1">TELEMETRY_STREAM // OK</text>
+</svg>

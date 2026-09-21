@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 130" width="100%" height="130">
+  <defs>
+    <linearGradient id="connectBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a13" />
+      <stop offset="50%" stop-color="#0d1424" />
+      <stop offset="100%" stop-color="#080c16" />
+    </linearGradient>
+
+    <linearGradient id="connectBorder" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#a855f7" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.8" />
+    </linearGradient>
+
+    <style>
+      .mono { font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      @keyframes cursorBlink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      .cursor { animation: cursorBlink 1.2s infinite; }
+      @media (prefers-reduced-motion: reduce) {
+        .cursor { animation: none !important; opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background Panel -->
+  <rect x="2" y="2" width="896" height="126" rx="8" fill="url(#connectBg)" stroke="url(#connectBorder)" stroke-width="1.2" />
+
+  <!-- Corner Brackets -->
+  <path d="M 2 16 L 2 2 L 16 2" fill="none" stroke="#00e5ff" stroke-width="2" />
+  <path d="M 884 2 L 898 2 L 898 16" fill="none" stroke="#10b981" stroke-width="2" />
+  <path d="M 2 114 L 2 128 L 16 128" fill="none" stroke="#00e5ff" stroke-width="2" />
+  <path d="M 884 128 L 898 128 L 898 114" fill="none" stroke="#10b981" stroke-width="2" />
+
+  <!-- Top Bar -->
+  <g transform="translate(26, 24)">
+    <circle cx="0" cy="0" r="4" fill="#10b981" />
+    <text class="mono" x="12" y="4" font-size="10.5" font-weight="700" fill="#94a3b8" letter-spacing="1">COMMS ARRAY <tspan fill="#334155">//</tspan> FREQUENCY: OPEN <tspan fill="#334155">//</tspan> LATENCY: NOMINAL</text>
+    <text class="mono" x="846" y="4" text-anchor="end" font-size="10.5" font-weight="600" fill="#38bdf8">TRANSMISSION READY</text>
+  </g>
+
+  <line x1="26" y1="40" x2="872" y2="40" stroke="#1e293b" stroke-width="1" />
+
+  <!-- Terminal Command Prompt -->
+  <g transform="translate(26, 74)">
+    <text class="mono" font-size="13" font-weight="600" fill="#00e5ff">
+      tk@command-center:~$ <tspan fill="#f1f5f9">ping -c 1 tony-kishore --mode=collaborate</tspan><tspan class="cursor" fill="#00e5ff">_</tspan>
+    </text>
+    <text class="mono" y="24" font-size="11" fill="#64748b">
+      Available endpoints: [ GitHub: <tspan fill="#94a3b8">@TonyKishore002</tspan> ] • [ Domain: <tspan fill="#94a3b8">Applied AI &amp; Local LLMs</tspan> ] • [ Status: <tspan fill="#10b981">Available for Opportunities</tspan> ]
+    </text>
+  </g>
+</svg>

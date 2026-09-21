@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a12" />
+      <stop offset="50%" stop-color="#0c111d" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+
+    <!-- Accent Gradients -->
+    <linearGradient id="cyanPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff" />
+      <stop offset="60%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.8" />
+      <stop offset="35%" stop-color="#1e293b" stop-opacity="0.4" />
+      <stop offset="70%" stop-color="#a855f7" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0.3" />
+    </linearGradient>
+
+    <linearGradient id="glowLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0" />
+      <stop offset="30%" stop-color="#00e5ff" stop-opacity="0.8" />
+      <stop offset="70%" stop-color="#a855f7" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Subtle Grid Pattern -->
+    <pattern id="cyberGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e293b" stroke-width="0.7" stroke-opacity="0.4" />
+    </pattern>
+
+    <style>
+      .mono { font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', 'Cascadia Code', monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      
+      /* Subtle CSS Keyframe Animations with Static Fallbacks */
+      @keyframes pulseDot {
+        0%, 100% { opacity: 1; r: 4.5; }
+        50% { opacity: 0.45; r: 3.5; }
+      }
+      @keyframes beaconRing {
+        0% { r: 5; opacity: 0.8; stroke-width: 1.5; }
+        100% { r: 12; opacity: 0; stroke-width: 0.5; }
+      }
+      @keyframes scanDrift {
+        0% { transform: translateY(0); opacity: 0.15; }
+        50% { opacity: 0.45; }
+        100% { transform: translateY(240px); opacity: 0.15; }
+      }
+      @keyframes borderShimmer {
+        0%, 100% { stroke-opacity: 0.5; }
+        50% { stroke-opacity: 0.85; }
+      }
+
+      .pulse-dot { animation: pulseDot 2.8s ease-in-out infinite; }
+      .beacon-ring { animation: beaconRing 2.8s cubic-bezier(0.2, 0.8, 0.4, 1) infinite; }
+      .scanline { animation: scanDrift 8s linear infinite; }
+      .card-border { animation: borderShimmer 4s ease-in-out infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .pulse-dot, .beacon-ring, .scanline, .card-border { animation: none !important; }
+      }
+    </style>
+  </defs>
+
+  <!-- Container Box with Rounded Cyber Corners -->
+  <rect x="2" y="2" width="896" height="256" rx="10" fill="url(#bgGrad)" />
+  <rect x="2" y="2" width="896" height="256" rx="10" fill="url(#cyberGrid)" />
+
+  <!-- Animated Scanline Accent -->
+  <line class="scanline" x1="2" y1="10" x2="898" y2="10" stroke="#00e5ff" stroke-width="1.2" stroke-opacity="0.3" />
+
+  <!-- Border Outline -->
+  <rect class="card-border" x="2" y="2" width="896" height="256" rx="10" fill="none" stroke="url(#borderGrad)" stroke-width="1.5" />
+
+  <!-- Corner Brackets (Cyber Aesthetic) -->
+  <path d="M 2 24 L 2 2 L 24 2" fill="none" stroke="#00e5ff" stroke-width="2.5" />
+  <path d="M 876 2 L 898 2 L 898 24" fill="none" stroke="#00e5ff" stroke-width="2.5" />
+  <path d="M 2 236 L 2 258 L 24 258" fill="none" stroke="#a855f7" stroke-width="2.5" />
+  <path d="M 876 258 L 898 258 L 898 236" fill="none" stroke="#a855f7" stroke-width="2.5" />
+
+  <!-- Top HUD Header Strip -->
+  <rect x="3" y="3" width="894" height="34" rx="8" fill="#090d16" fill-opacity="0.85" />
+  <line x1="3" y1="37" x2="897" y2="37" stroke="#1e293b" stroke-width="1" />
+
+  <!-- Terminal Status Beacon -->
+  <circle class="beacon-ring" cx="24" cy="20" r="5" fill="none" stroke="#10b981" />
+  <circle class="pulse-dot" cx="24" cy="20" r="4" fill="#10b981" />
+
+  <!-- Top Header Telemetry Label -->
+  <text class="mono" x="38" y="24" font-size="11" font-weight="600" fill="#94a3b8" letter-spacing="1">TK AI COMMAND CENTER <tspan fill="#334155">//</tspan> <tspan fill="#00e5ff">NODE: TK-01</tspan> <tspan fill="#334155">//</tspan> <tspan fill="#a855f7">CORE: LOCAL-AI</tspan></text>
+
+  <!-- Top Right Mode Indicator -->
+  <text class="mono" x="874" y="24" text-anchor="end" font-size="11" font-weight="600" fill="#10b981" letter-spacing="1">● STATUS: ONLINE</text>
+
+  <!-- Central Visual Matrix (Subtle Node Rings on Right) -->
+  <g transform="translate(730, 135)" opacity="0.45">
+    <circle cx="0" cy="0" r="55" fill="none" stroke="#1e293b" stroke-width="1" stroke-dasharray="4 4" />
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#00e5ff" stroke-width="0.8" stroke-opacity="0.6" />
+    <circle cx="0" cy="0" r="22" fill="none" stroke="#a855f7" stroke-width="1" />
+    <circle cx="0" cy="0" r="5" fill="#00e5ff" />
+    <!-- Orbiting Satellite Nodes -->
+    <circle cx="40" cy="0" r="3" fill="#10b981" />
+    <circle cx="-28" cy="28" r="2.5" fill="#a855f7" />
+    <circle cx="0" cy="-40" r="2" fill="#00e5ff" />
+    <line x1="-55" y1="0" x2="55" y2="0" stroke="#1e293b" stroke-width="0.7" />
+    <line x1="0" y1="-55" x2="0" y2="55" stroke="#1e293b" stroke-width="0.7" />
+  </g>
+
+  <!-- Identity Section -->
+  <g transform="translate(36, 76)">
+    <!-- Sub-heading tag -->
+    <rect x="0" y="0" width="138" height="20" rx="4" fill="#00e5ff" fill-opacity="0.12" stroke="#00e5ff" stroke-opacity="0.3" stroke-width="1" />
+    <text class="mono" x="8" y="14" font-size="10" font-weight="700" fill="#00e5ff" letter-spacing="1.2">SYSTEM OPERATOR</text>
+
+    <!-- Name Heading -->
+    <text class="sans" x="0" y="52" font-size="32" font-weight="800" fill="#f8fafc" letter-spacing="0.5">Tony Kishore <tspan font-size="18" font-family="'SF Mono', 'Segoe UI Mono', monospace" font-weight="400" fill="#64748b">/ TonyKishore002</tspan></text>
+
+    <!-- Role Description -->
+    <text class="mono" x="0" y="78" font-size="13.5" font-weight="600" fill="url(#cyanPurple)" letter-spacing="0.8">B.Tech IT Student <tspan fill="#475569">|</tspan> AI / ML Engineer in the Making</text>
+
+    <!-- Personal Quote / Bio -->
+    <g transform="translate(0, 94)">
+      <rect x="0" y="0" width="580" height="28" rx="5" fill="#0b1120" fill-opacity="0.75" stroke="#1e293b" stroke-width="0.8" />
+      <text class="sans" x="12" y="18" font-size="12" font-weight="400" fill="#cbd5e1">🤖 "Training AI because my brain needs a backup. Currently debugging both."</text>
+    </g>
+  </g>
+
+  <!-- Bottom Glowing Separation Line -->
+  <line x1="20" y1="218" x2="880" y2="218" stroke="url(#glowLine)" stroke-width="1" />
+
+  <!-- Bottom Telemetry Strip (Exact Values as Requested) -->
+  <g transform="translate(36, 238)">
+    <text class="mono" x="0" y="0" font-size="10.5" font-weight="600" fill="#64748b">
+      NODE: <tspan fill="#00e5ff">TK-01</tspan>
+      <tspan fill="#334155">  |  </tspan>
+      CORE: <tspan fill="#a855f7">LOCAL-AI</tspan>
+      <tspan fill="#334155">  |  </tspan>
+      MODE: <tspan fill="#38bdf8">LOCAL-FIRST</tspan>
+      <tspan fill="#334155">  |  </tspan>
+      STATUS: <tspan fill="#10b981">ONLINE</tspan>
+      <tspan fill="#334155">  |  </tspan>
+      PROFILE: <tspan fill="#e2e8f0">2026</tspan>
+    </text>
+
+    <!-- Right Side Security / Telemetry Token -->
+    <text class="mono" x="828" y="0" text-anchor="end" font-size="10" font-weight="500" fill="#475569" letter-spacing="0.5">[SYS.AUTH: OK // VERIFIED_HOST]</text>
+  </g>
+</svg>
