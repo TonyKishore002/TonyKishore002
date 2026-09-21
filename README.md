@@ -5,7 +5,7 @@
 <br/>
 
 <p align="left">
-  Hi! I'm <strong>Tony K</strong>, a B.Tech Information Technology student focused on AI/ML, AI Engineering, and Software Development. I enjoy building practical software and intelligent systems that solve real-world problems.
+  Hi! I'm <strong>Tony K</strong>, a B.Tech Information Technology student focused on AI Engineering and Software Development. I enjoy building practical software and intelligent systems that solve real-world problems.
 </p>
 
 <div align="center">
