@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 160" width="100%" height="100%">
+  <defs>
+    <linearGradient id="footerIronBg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#07090e" />
+      <stop offset="50%" stop-color="#0d0f17" />
+      <stop offset="100%" stop-color="#140c11" />
+    </linearGradient>
+
+    <linearGradient id="footerCrimson" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#7f1d1d" stop-opacity="0.4" />
+      <stop offset="50%" stop-color="#b91c1c" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#d97706" stop-opacity="0.1" />
+    </linearGradient>
+
+    <linearGradient id="footerGold" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d97706" stop-opacity="0.2" />
+      <stop offset="50%" stop-color="#fbbf24" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.15" />
+    </linearGradient>
+
+    <linearGradient id="footerTextGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#fef3c7" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+
+    <linearGradient id="footerBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(220, 38, 38, 0.35)" />
+      <stop offset="50%" stop-color="rgba(245, 158, 11, 0.35)" />
+      <stop offset="100%" stop-color="rgba(56, 189, 248, 0.25)" />
+    </linearGradient>
+
+    <radialGradient id="footerArcAura" cx="50%" cy="100%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.22" />
+      <stop offset="60%" stop-color="#0284c7" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#07090e" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <style>
+    @keyframes footerWaveMotion {
+      0% { transform: translateX(0px) translateY(0px); }
+      50% { transform: translateX(-16px) translateY(-5px); }
+      100% { transform: translateX(0px) translateY(0px); }
+    }
+    .footer-wave {
+      animation: footerWaveMotion 12s ease-in-out infinite;
+    }
+    .footer-heading {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+  </style>
+
+  <!-- Container Box -->
+  <rect width="920" height="160" rx="16" fill="url(#footerIronBg)" stroke="url(#footerBorderGrad)" stroke-width="1.2" />
+
+  <!-- Center Arc Reactor Aura -->
+  <circle cx="460" cy="160" r="140" fill="url(#footerArcAura)" />
+  <circle cx="120" cy="40" r="80" fill="#991b1b" opacity="0.1" />
+  <circle cx="820" cy="120" r="90" fill="#d97706" opacity="0.1" />
+
+  <!-- Flowing Waves at Top (Clipped) -->
+  <g clip-path="url(#footerClip)">
+    <clipPath id="footerClip">
+      <rect width="920" height="160" rx="16" />
+    </clipPath>
+
+    <path class="footer-wave" d="M -50,55 C 160,110 350,15 540,75 C 720,130 840,30 980,70 L 980,0 L -50,0 Z" fill="url(#footerCrimson)" />
+    <path class="footer-wave" d="M -50,40 C 180,95 320,10 500,60 C 680,110 830,20 980,50 L 980,0 L -50,0 Z" fill="url(#footerGold)" />
+    <path class="footer-wave" d="M -50,40 C 180,95 320,10 500,60 C 680,110 830,20 980,50" fill="none" stroke="#fbbf24" stroke-width="1.2" opacity="0.45" />
+  </g>
+
+  <!-- Centered Content -->
+  <g text-anchor="middle" transform="translate(460, 0)">
+    <text x="0" y="86" fill="url(#footerTextGold)" font-size="22" class="footer-heading">
+      Thanks for visiting my profile! 🚀
+    </text>
+    <text x="0" y="115" fill="#94a3b8" font-size="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+      Open for collaborations, internships, and exciting software &amp; AI opportunities.
+    </text>
+  </g>
+</svg>

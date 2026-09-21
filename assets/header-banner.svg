@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="ironBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07090e" />
+      <stop offset="45%" stop-color="#0c0e15" />
+      <stop offset="100%" stop-color="#140d12" />
+    </linearGradient>
+
+    <!-- Metallic Crimson & Amber Gradients -->
+    <linearGradient id="crimsonWave" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7f1d1d" stop-opacity="0.45" />
+      <stop offset="40%" stop-color="#b91c1c" stop-opacity="0.4" />
+      <stop offset="80%" stop-color="#dc2626" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.1" />
+    </linearGradient>
+
+    <linearGradient id="goldWave" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97706" stop-opacity="0.35" />
+      <stop offset="45%" stop-color="#fbbf24" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#b91c1c" stop-opacity="0.15" />
+    </linearGradient>
+
+    <!-- Arc Glow Gradient -->
+    <radialGradient id="arcGlow" cx="85%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.28" />
+      <stop offset="35%" stop-color="#0284c7" stop-opacity="0.15" />
+      <stop offset="70%" stop-color="#b91c1c" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#07090e" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="titleGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#fef3c7" />
+      <stop offset="80%" stop-color="#fde68a" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(245, 158, 11, 0.4)" />
+      <stop offset="50%" stop-color="rgba(220, 38, 38, 0.3)" />
+      <stop offset="100%" stop-color="rgba(56, 189, 248, 0.3)" />
+    </linearGradient>
+
+    <!-- Drop Shadow & Soft Blur -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="28" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes waveMotion1 {
+      0% { transform: translateX(0px) translateY(0px); }
+      50% { transform: translateX(-20px) translateY(5px); }
+      100% { transform: translateX(0px) translateY(0px); }
+    }
+    @keyframes waveMotion2 {
+      0% { transform: translateX(0px) translateY(0px); }
+      50% { transform: translateX(18px) translateY(-6px); }
+      100% { transform: translateX(0px) translateY(0px); }
+    }
+    @keyframes pulseArc {
+      0%, 100% { opacity: 0.7; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.04); }
+    }
+    .wave-crimson {
+      animation: waveMotion1 14s ease-in-out infinite;
+    }
+    .wave-gold {
+      animation: waveMotion2 11s ease-in-out infinite;
+    }
+    .arc-pulse {
+      animation: pulseArc 5s ease-in-out infinite;
+      transform-origin: 780px 70px;
+    }
+    .font-title {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .font-sub {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+      font-weight: 500;
+    }
+  </style>
+
+  <!-- Container Box -->
+  <rect width="920" height="220" rx="16" fill="url(#ironBg)" stroke="url(#borderGrad)" stroke-width="1.2" />
+
+  <!-- Arc Reactor Subtle Light Source (Right Side) -->
+  <circle cx="780" cy="70" r="140" fill="url(#arcGlow)" class="arc-pulse" />
+  <circle cx="160" cy="180" r="110" fill="#991b1b" opacity="0.12" filter="url(#softGlow)" />
+
+  <!-- Flowing Geometric & Organic Curves (Clipped) -->
+  <g clip-path="url(#headerClip)">
+    <clipPath id="headerClip">
+      <rect width="920" height="220" rx="16" />
+    </clipPath>
+
+    <!-- Deep Crimson Wave -->
+    <path class="wave-crimson" d="M -60,135 C 160,80 340,210 520,130 C 700,55 830,175 990,115 L 990,250 L -60,250 Z" fill="url(#crimsonWave)" />
+
+    <!-- Burnished Gold Accent Wave -->
+    <path class="wave-gold" d="M -60,165 C 180,110 320,225 510,155 C 700,85 840,205 990,150 L 990,250 L -60,250 Z" fill="url(#goldWave)" />
+
+    <!-- Sharp Horizon Edge Line (Warm Gold / Crimson Shimmer) -->
+    <path class="wave-gold" d="M -60,165 C 180,110 320,225 510,155 C 700,85 840,205 990,150" fill="none" stroke="#fbbf24" stroke-width="1.5" opacity="0.55" />
+
+    <!-- Arc-Light Trace Line -->
+    <path class="wave-crimson" d="M -60,135 C 160,80 340,210 520,130 C 700,55 830,175 990,115" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.35" />
+  </g>
+
+  <!-- Left Armor Trim Accent Bar -->
+  <rect x="42" y="44" width="4" height="132" rx="2" fill="url(#titleGold)" />
+
+  <!-- Content Container -->
+  <g transform="translate(62, 0)">
+    <!-- Pill Tag -->
+    <g transform="translate(0, 42)">
+      <rect width="216" height="26" rx="13" fill="rgba(15, 23, 42, 0.7)" stroke="rgba(245, 158, 11, 0.4)" stroke-width="1" />
+      <circle cx="14" cy="13" r="4" fill="#38bdf8" />
+      <text x="26" y="17" fill="#fde68a" font-size="11" font-weight="600" letter-spacing="0.8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">DEVELOPER PORTFOLIO</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="112" fill="url(#titleGold)" font-size="44" class="font-title">Tony K <tspan fill="#f59e0b">👋</tspan></text>
+
+    <!-- Subtitle: Tracks & Specializations -->
+    <text x="0" y="145" fill="#e2e8f0" font-size="15" class="font-sub">
+      <tspan font-weight="700" fill="#ffffff">B.Tech Information Technology Student</tspan>
+      <tspan fill="#d97706"> · </tspan>
+      <tspan fill="#fef08a">AI/ML</tspan>
+      <tspan fill="#d97706"> · </tspan>
+      <tspan fill="#fca5a5">AI Engineering</tspan>
+      <tspan fill="#d97706"> · </tspan>
+      <tspan fill="#7dd3fc">Software Development</tspan>
+    </text>
+
+    <!-- Tagline -->
+    <text x="0" y="172" fill="#94a3b8" font-size="13" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+      Building practical software and intelligent systems that solve real-world problems.
+    </text>
+  </g>
+</svg>
