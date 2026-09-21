@@ -1,8 +1,12 @@
-# Hi, I'm Tony 👋
+<h1 align="left">Tony K 👋</h1>
 
-B.Tech Information Technology student interested in AI/ML, AI Engineering, and Software Development.
+<p align="left">
+<strong>B.Tech Information Technology Student</strong> · AI/ML · AI Engineering · Software Development
+</p>
 
-I enjoy building practical software and intelligent systems that solve real problems.
+<p align="left">
+Interested in building practical software and intelligent systems that solve real-world problems.
+</p>
 
 ---
 
