@@ -58,6 +58,22 @@
       <stop offset="100%" stop-color="#082f49" stop-opacity="1" />
     </radialGradient>
 
+    <!-- Machined Gunmetal Titanium Ring Gradient -->
+    <linearGradient id="gunmetalBezel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d3748" />
+      <stop offset="25%" stop-color="#1a202c" />
+      <stop offset="50%" stop-color="#334155" />
+      <stop offset="75%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+
+    <!-- Radiating Cooling Fin Dark Metal Gradient -->
+    <linearGradient id="heatsinkFinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#222a38" />
+      <stop offset="45%" stop-color="#121620" />
+      <stop offset="100%" stop-color="#090b10" />
+    </linearGradient>
+
     <!-- Glass Cover Specular Flare -->
     <linearGradient id="glassReflection" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45" />
@@ -65,6 +81,30 @@
       <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.0" />
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0.1" />
     </linearGradient>
+
+    <!-- Reusable Mark VI Outer Strut Pair (Top side, then rotated 120 and 240) -->
+    <g id="outerStrutPair">
+      <line x1="-13" y1="-19" x2="-13" y2="-41.9" stroke="#080b10" stroke-width="3.6" stroke-linecap="round" />
+      <line x1="-13" y1="-19" x2="-13" y2="-41.9" stroke="#283449" stroke-width="1.5" stroke-linecap="round" />
+      <line x1="-13" y1="-19" x2="-13" y2="-41.9" stroke="#67e8f9" stroke-width="0.75" stroke-linecap="round" opacity="0.75" />
+      <line x1="13" y1="-19" x2="13" y2="-41.9" stroke="#080b10" stroke-width="3.6" stroke-linecap="round" />
+      <line x1="13" y1="-19" x2="13" y2="-41.9" stroke="#283449" stroke-width="1.5" stroke-linecap="round" />
+      <line x1="13" y1="-19" x2="13" y2="-41.9" stroke="#67e8f9" stroke-width="0.75" stroke-linecap="round" opacity="0.75" />
+    </g>
+
+    <!-- Reusable Mark VI Corner Strut (Bottom vertex, then rotated 120 and 240) -->
+    <g id="cornerStrut">
+      <line x1="0" y1="17" x2="0" y2="38" stroke="#080b10" stroke-width="3.8" stroke-linecap="round" />
+      <line x1="0" y1="17" x2="0" y2="38" stroke="#283449" stroke-width="1.5" stroke-linecap="round" />
+      <line x1="0" y1="17" x2="0" y2="38" stroke="#67e8f9" stroke-width="0.75" stroke-linecap="round" opacity="0.8" />
+    </g>
+
+    <!-- Reusable Cooling Heatsink Fin (Outer Perimeter) -->
+    <g id="heatsinkFin">
+      <rect x="-6" y="-81" width="12" height="14" rx="1.5" fill="url(#heatsinkFinGrad)" stroke="#263143" stroke-width="1.2" />
+      <rect x="-4" y="-79" width="8" height="10" rx="1" fill="#0b0d13" />
+      <line x1="0" y1="-79" x2="0" y2="-70" stroke="#1c2433" stroke-width="1.8" />
+    </g>
 
     <!-- Intense Optical Bloom Filter (Internal) -->
     <filter id="blazingPlasmaGlow" x="-50%" y="-50%" width="200%" height="200%">
@@ -102,18 +142,7 @@
     <clipPath id="textingClip">
       <rect x="0" y="148" width="0" height="30">
         <animate attributeName="width" 
-                 values="0; 0; 580; 580; 580; 0" 
-                 keyTimes="0; 0.04; 0.52; 0.88; 0.96; 1" 
-                 dur="8.5s" 
-                 repeatCount="indefinite" />
-      </rect>
-    </clipPath>
-
-    <!-- ANIMATED CURSOR POSITION -->
-    <clipPath id="cursorClip">
-      <rect x="0" y="150" width="10" height="20">
-        <animate attributeName="x" 
-                 values="0; 0; 555; 555; 555; 0" 
+                 values="0; 0; 586; 586; 586; 0" 
                  keyTimes="0; 0.04; 0.52; 0.88; 0.96; 1" 
                  dur="8.5s" 
                  repeatCount="indefinite" />
@@ -230,10 +259,6 @@
 
     <!-- Burnished Gold Accent Wave -->
     <path d="M -60,165 C 180,110 320,225 510,155 C 700,85 840,205 990,150 L 990,250 L -60,250 Z" fill="url(#goldWave)" />
-
-    <!-- Crisp Static Horizon Lines -->
-    <path d="M -60,165 C 180,110 320,225 510,155 C 700,85 840,205 990,150" fill="none" stroke="#fbbf24" stroke-width="1.6" opacity="0.65" />
-    <path d="M -60,135 C 160,80 340,210 520,130 C 700,55 830,175 990,115" fill="none" stroke="#38bdf8" stroke-width="1.2" opacity="0.35" />
   </g>
 
   <!-- Left Armor Accent Bar -->
@@ -257,326 +282,171 @@
 
     <!-- TEXTING ANIMATION: High-contrast, completely visible -->
     <g clip-path="url(#textingClip)">
-      <text x="0" y="167" fill="#f8fafc" font-size="13" class="font-texting">
+      <text x="0" y="167" fill="#f8fafc" font-size="12" class="font-texting" textLength="580" lengthAdjust="spacing">
         Building practical software and intelligent systems that solve real-world problems.
       </text>
     </g>
 
-    <!-- Blinking Texting Cursor -->
-    <g clip-path="url(#cursorClip)" class="cursor-blinking">
-      <rect x="0" y="153" width="2.5" height="15" fill="#38bdf8" rx="1" />
+    <!-- Blinking Moving Texting Cursor (Locked pixel-perfect to typing edge) -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" 
+                        values="0,0; 0,0; 584,0; 584,0; 584,0; 0,0" 
+                        keyTimes="0; 0.04; 0.52; 0.88; 0.96; 1" 
+                        dur="8.5s" 
+                        repeatCount="indefinite" />
+      <rect x="0" y="153" width="2" height="15" fill="#38bdf8" rx="1" class="cursor-blinking">
+        <animate attributeName="opacity" 
+                 values="1; 1; 0; 0; 1" 
+                 keyTimes="0; 0.45; 0.5; 0.95; 1" 
+                 dur="0.85s" 
+                 repeatCount="indefinite" />
+      </rect>
     </g>
   </g>
 
   <!-- ======================================================== -->
-  <!-- REAL ARC REACTOR (EXACT MOVIE PROP STRUCTURE & BLINK)    -->
+  <!-- REAL MARK VI ARC REACTOR (STRAIGHT ORIENTATION & MOVIE PROP) -->
   <!-- ======================================================== -->
 
-  <!-- Stationary Realistic Arc Reactor Assembly -->
   <g transform="translate(785, 110)">
-    <!-- Copper Coils Perimeter Layer -->
+    <!-- 1. Outer Dark Industrial Cooling Vanes / Heatsinks (12 Fins matching movie prop) -->
     <g>
-
-        <g transform="rotate(0)">
-          <rect x="-7" y="-70" width="14" height="12" rx="2" fill="#181310" stroke="#78350f" stroke-width="1.2" />
-          <line x1="-5" y1="-68" x2="-5" y2="-60" stroke="#f59e0b" stroke-width="1.4" />
-          <line x1="-3" y1="-68" x2="-3" y2="-60" stroke="#d97706" stroke-width="1.2" />
-          <line x1="-1" y1="-68" x2="-1" y2="-60" stroke="#fbbf24" stroke-width="1.4" />
-          <line x1="1" y1="-68" x2="1" y2="-60" stroke="#f59e0b" stroke-width="1.2" />
-          <line x1="3" y1="-68" x2="3" y2="-60" stroke="#f59e0b" stroke-width="0.8" opacity="0.85" />
-          <line x1="5" y1="-68" x2="5" y2="-60" stroke="#d97706" stroke-width="1.0" />
-        </g>
-
-        <g transform="rotate(36)">
-          <rect x="-7" y="-70" width="14" height="12" rx="2" fill="#181310" stroke="#78350f" stroke-width="1.2" />
-          <line x1="-5" y1="-68" x2="-5" y2="-60" stroke="#f59e0b" stroke-width="1.4" />
-          <line x1="-3" y1="-68" x2="-3" y2="-60" stroke="#d97706" stroke-width="1.2" />
-          <line x1="-1" y1="-68" x2="-1" y2="-60" stroke="#fbbf24" stroke-width="1.4" />
-          <line x1="1" y1="-68" x2="1" y2="-60" stroke="#f59e0b" stroke-width="1.2" />
-          <line x1="3" y1="-68" x2="3" y2="-60" stroke="#f59e0b" stroke-width="0.8" opacity="0.85" />
-          <line x1="5" y1="-68" x2="5" y2="-60" stroke="#d97706" stroke-width="1.0" />
-        </g>
-
-        <g transform="rotate(72)">
-          <rect x="-7" y="-70" width="14" height="12" rx="2" fill="#181310" stroke="#78350f" stroke-width="1.2" />
-          <line x1="-5" y1="-68" x2="-5" y2="-60" stroke="#f59e0b" stroke-width="1.4" />
-          <line x1="-3" y1="-68" x2="-3" y2="-60" stroke="#d97706" stroke-width="1.2" />
-          <line x1="-1" y1="-68" x2="-1" y2="-60" stroke="#fbbf24" stroke-width="1.4" />
-          <line x1="1" y1="-68" x2="1" y2="-60" stroke="#f59e0b" stroke-width="1.2" />
-          <line x1="3" y1="-68" x2="3" y2="-60" stroke="#f59e0b" stroke-width="0.8" opacity="0.85" />
-          <line x1="5" y1="-68" x2="5" y2="-60" stroke="#d97706" stroke-width="1.0" />
-        </g>
-
-        <g transform="rotate(108)">
-          <rect x="-7" y="-70" width="14" height="12" rx="2" fill="#181310" stroke="#78350f" stroke-width="1.2" />
-          <line x1="-5" y1="-68" x2="-5" y2="-60" stroke="#f59e0b" stroke-width="1.4" />
-          <line x1="-3" y1="-68" x2="-3" y2="-60" stroke="#d97706" stroke-width="1.2" />
-          <line x1="-1" y1="-68" x2="-1" y2="-60" stroke="#fbbf24" stroke-width="1.4" />
-          <line x1="1" y1="-68" x2="1" y2="-60" stroke="#f59e0b" stroke-width="1.2" />
-          <line x1="3" y1="-68" x2="3" y2="-60" stroke="#f59e0b" stroke-width="0.8" opacity="0.85" />
-          <line x1="5" y1="-68" x2="5" y2="-60" stroke="#d97706" stroke-width="1.0" />
-        </g>
-
-        <g transform="rotate(144)">
-          <rect x="-7" y="-70" width="14" height="12" rx="2" fill="#181310" stroke="#78350f" stroke-width="1.2" />
-          <line x1="-5" y1="-68" x2="-5" y2="-60" stroke="#f59e0b" stroke-width="1.4" />
-          <line x1="-3" y1="-68" x2="-3" y2="-60" stroke="#d97706" stroke-width="1.2" />
-          <line x1="-1" y1="-68" x2="-1" y2="-60" stroke="#fbbf24" stroke-width="1.4" />
-          <line x1="1" y1="-68" x2="1" y2="-60" stroke="#f59e0b" stroke-width="1.2" />
-          <line x1="3" y1="-68" x2="3" y2="-60" stroke="#f59e0b" stroke-width="0.8" opacity="0.85" />
-          <line x1="5" y1="-68" x2="5" y2="-60" stroke="#d97706" stroke-width="1.0" />
-        </g>
-
-        <g transform="rotate(180)">
-          <rect x="-7" y="-70" width="14" height="12" rx="2" fill="#181310" stroke="#78350f" stroke-width="1.2" />
-          <line x1="-5" y1="-68" x2="-5" y2="-60" stroke="#f59e0b" stroke-width="1.4" />
-          <line x1="-3" y1="-68" x2="-3" y2="-60" stroke="#d97706" stroke-width="1.2" />
-          <line x1="-1" y1="-68" x2="-1" y2="-60" stroke="#fbbf24" stroke-width="1.4" />
-          <line x1="1" y1="-68" x2="1" y2="-60" stroke="#f59e0b" stroke-width="1.2" />
-          <line x1="3" y1="-68" x2="3" y2="-60" stroke="#f59e0b" stroke-width="0.8" opacity="0.85" />
-          <line x1="5" y1="-68" x2="5" y2="-60" stroke="#d97706" stroke-width="1.0" />
-        </g>
-
-        <g transform="rotate(216)">
-          <rect x="-7" y="-70" width="14" height="12" rx="2" fill="#181310" stroke="#78350f" stroke-width="1.2" />
-          <line x1="-5" y1="-68" x2="-5" y2="-60" stroke="#f59e0b" stroke-width="1.4" />
-          <line x1="-3" y1="-68" x2="-3" y2="-60" stroke="#d97706" stroke-width="1.2" />
-          <line x1="-1" y1="-68" x2="-1" y2="-60" stroke="#fbbf24" stroke-width="1.4" />
-          <line x1="1" y1="-68" x2="1" y2="-60" stroke="#f59e0b" stroke-width="1.2" />
-          <line x1="3" y1="-68" x2="3" y2="-60" stroke="#f59e0b" stroke-width="0.8" opacity="0.85" />
-          <line x1="5" y1="-68" x2="5" y2="-60" stroke="#d97706" stroke-width="1.0" />
-        </g>
-
-        <g transform="rotate(252)">
-          <rect x="-7" y="-70" width="14" height="12" rx="2" fill="#181310" stroke="#78350f" stroke-width="1.2" />
-          <line x1="-5" y1="-68" x2="-5" y2="-60" stroke="#f59e0b" stroke-width="1.4" />
-          <line x1="-3" y1="-68" x2="-3" y2="-60" stroke="#d97706" stroke-width="1.2" />
-          <line x1="-1" y1="-68" x2="-1" y2="-60" stroke="#fbbf24" stroke-width="1.4" />
-          <line x1="1" y1="-68" x2="1" y2="-60" stroke="#f59e0b" stroke-width="1.2" />
-          <line x1="3" y1="-68" x2="3" y2="-60" stroke="#f59e0b" stroke-width="0.8" opacity="0.85" />
-          <line x1="5" y1="-68" x2="5" y2="-60" stroke="#d97706" stroke-width="1.0" />
-        </g>
-
-        <g transform="rotate(288)">
-          <rect x="-7" y="-70" width="14" height="12" rx="2" fill="#181310" stroke="#78350f" stroke-width="1.2" />
-          <line x1="-5" y1="-68" x2="-5" y2="-60" stroke="#f59e0b" stroke-width="1.4" />
-          <line x1="-3" y1="-68" x2="-3" y2="-60" stroke="#d97706" stroke-width="1.2" />
-          <line x1="-1" y1="-68" x2="-1" y2="-60" stroke="#fbbf24" stroke-width="1.4" />
-          <line x1="1" y1="-68" x2="1" y2="-60" stroke="#f59e0b" stroke-width="1.2" />
-          <line x1="3" y1="-68" x2="3" y2="-60" stroke="#f59e0b" stroke-width="0.8" opacity="0.85" />
-          <line x1="5" y1="-68" x2="5" y2="-60" stroke="#d97706" stroke-width="1.0" />
-        </g>
-
-        <g transform="rotate(324)">
-          <rect x="-7" y="-70" width="14" height="12" rx="2" fill="#181310" stroke="#78350f" stroke-width="1.2" />
-          <line x1="-5" y1="-68" x2="-5" y2="-60" stroke="#f59e0b" stroke-width="1.4" />
-          <line x1="-3" y1="-68" x2="-3" y2="-60" stroke="#d97706" stroke-width="1.2" />
-          <line x1="-1" y1="-68" x2="-1" y2="-60" stroke="#fbbf24" stroke-width="1.4" />
-          <line x1="1" y1="-68" x2="1" y2="-60" stroke="#f59e0b" stroke-width="1.2" />
-          <line x1="3" y1="-68" x2="3" y2="-60" stroke="#f59e0b" stroke-width="0.8" opacity="0.85" />
-          <line x1="5" y1="-68" x2="5" y2="-60" stroke="#d97706" stroke-width="1.0" />
-        </g>
+      <use href="#heatsinkFin" transform="rotate(0)" />
+      <use href="#heatsinkFin" transform="rotate(30)" />
+      <use href="#heatsinkFin" transform="rotate(60)" />
+      <use href="#heatsinkFin" transform="rotate(90)" />
+      <use href="#heatsinkFin" transform="rotate(120)" />
+      <use href="#heatsinkFin" transform="rotate(150)" />
+      <use href="#heatsinkFin" transform="rotate(180)" />
+      <use href="#heatsinkFin" transform="rotate(210)" />
+      <use href="#heatsinkFin" transform="rotate(240)" />
+      <use href="#heatsinkFin" transform="rotate(270)" />
+      <use href="#heatsinkFin" transform="rotate(300)" />
+      <use href="#heatsinkFin" transform="rotate(330)" />
     </g>
 
-    <!-- Radiating Heatsink Teeth (10 Heavy Blocks) -->
-    <g>
+    <!-- 2. Stepped Machined Titanium Bezel & Outer Casings -->
+    <circle cx="0" cy="0" r="70" fill="#0d1017" stroke="#1c2332" stroke-width="2.6" />
+    <circle cx="0" cy="0" r="65.5" fill="url(#gunmetalBezel)" stroke="#3b4861" stroke-width="1.4" />
+    <circle cx="0" cy="0" r="62.5" fill="#0a0d13" stroke="#05070a" stroke-width="1.8" />
 
-        <g transform="rotate(0)">
-          <path d="M -9,-78 L 9,-78 L 8,-66 L -8,-66 Z" fill="#141720" stroke="#2d3748" stroke-width="1.2" />
-          <rect x="-6" y="-76" width="12" height="7" rx="1" fill="#0d0f15" stroke="#1f2430" stroke-width="0.8" />
-          <line x1="0" y1="-76" x2="0" y2="-67" stroke="#07090e" stroke-width="1.8" />
-        </g>
-
-        <g transform="rotate(36)">
-          <path d="M -9,-78 L 9,-78 L 8,-66 L -8,-66 Z" fill="#141720" stroke="#2d3748" stroke-width="1.2" />
-          <rect x="-6" y="-76" width="12" height="7" rx="1" fill="#0d0f15" stroke="#1f2430" stroke-width="0.8" />
-          <line x1="0" y1="-76" x2="0" y2="-67" stroke="#07090e" stroke-width="1.8" />
-        </g>
-
-        <g transform="rotate(72)">
-          <path d="M -9,-78 L 9,-78 L 8,-66 L -8,-66 Z" fill="#141720" stroke="#2d3748" stroke-width="1.2" />
-          <rect x="-6" y="-76" width="12" height="7" rx="1" fill="#0d0f15" stroke="#1f2430" stroke-width="0.8" />
-          <line x1="0" y1="-76" x2="0" y2="-67" stroke="#07090e" stroke-width="1.8" />
-        </g>
-
-        <g transform="rotate(108)">
-          <path d="M -9,-78 L 9,-78 L 8,-66 L -8,-66 Z" fill="#141720" stroke="#2d3748" stroke-width="1.2" />
-          <rect x="-6" y="-76" width="12" height="7" rx="1" fill="#0d0f15" stroke="#1f2430" stroke-width="0.8" />
-          <line x1="0" y1="-76" x2="0" y2="-67" stroke="#07090e" stroke-width="1.8" />
-        </g>
-
-        <g transform="rotate(144)">
-          <path d="M -9,-78 L 9,-78 L 8,-66 L -8,-66 Z" fill="#141720" stroke="#2d3748" stroke-width="1.2" />
-          <rect x="-6" y="-76" width="12" height="7" rx="1" fill="#0d0f15" stroke="#1f2430" stroke-width="0.8" />
-          <line x1="0" y1="-76" x2="0" y2="-67" stroke="#07090e" stroke-width="1.8" />
-        </g>
-
-        <g transform="rotate(180)">
-          <path d="M -9,-78 L 9,-78 L 8,-66 L -8,-66 Z" fill="#141720" stroke="#2d3748" stroke-width="1.2" />
-          <rect x="-6" y="-76" width="12" height="7" rx="1" fill="#0d0f15" stroke="#1f2430" stroke-width="0.8" />
-          <line x1="0" y1="-76" x2="0" y2="-67" stroke="#07090e" stroke-width="1.8" />
-        </g>
-
-        <g transform="rotate(216)">
-          <path d="M -9,-78 L 9,-78 L 8,-66 L -8,-66 Z" fill="#141720" stroke="#2d3748" stroke-width="1.2" />
-          <rect x="-6" y="-76" width="12" height="7" rx="1" fill="#0d0f15" stroke="#1f2430" stroke-width="0.8" />
-          <line x1="0" y1="-76" x2="0" y2="-67" stroke="#07090e" stroke-width="1.8" />
-        </g>
-
-        <g transform="rotate(252)">
-          <path d="M -9,-78 L 9,-78 L 8,-66 L -8,-66 Z" fill="#141720" stroke="#2d3748" stroke-width="1.2" />
-          <rect x="-6" y="-76" width="12" height="7" rx="1" fill="#0d0f15" stroke="#1f2430" stroke-width="0.8" />
-          <line x1="0" y1="-76" x2="0" y2="-67" stroke="#07090e" stroke-width="1.8" />
-        </g>
-
-        <g transform="rotate(288)">
-          <path d="M -9,-78 L 9,-78 L 8,-66 L -8,-66 Z" fill="#141720" stroke="#2d3748" stroke-width="1.2" />
-          <rect x="-6" y="-76" width="12" height="7" rx="1" fill="#0d0f15" stroke="#1f2430" stroke-width="0.8" />
-          <line x1="0" y1="-76" x2="0" y2="-67" stroke="#07090e" stroke-width="1.8" />
-        </g>
-
-        <g transform="rotate(324)">
-          <path d="M -9,-78 L 9,-78 L 8,-66 L -8,-66 Z" fill="#141720" stroke="#2d3748" stroke-width="1.2" />
-          <rect x="-6" y="-76" width="12" height="7" rx="1" fill="#0d0f15" stroke="#1f2430" stroke-width="0.8" />
-          <line x1="0" y1="-76" x2="0" y2="-67" stroke="#07090e" stroke-width="1.8" />
-        </g>
+    <!-- 12 Machined Socket Rivets along Bezel -->
+    <g stroke="#475569" stroke-width="0.6" fill="#080b11">
+      <circle cx="0" cy="-58" r="1.3" />
+      <circle cx="29" cy="-50.23" r="1.3" />
+      <circle cx="50.23" cy="-29" r="1.3" />
+      <circle cx="58" cy="0" r="1.3" />
+      <circle cx="50.23" cy="29" r="1.3" />
+      <circle cx="29" cy="50.23" r="1.3" />
+      <circle cx="0" cy="58" r="1.3" />
+      <circle cx="-29" cy="50.23" r="1.3" />
+      <circle cx="-50.23" cy="29" r="1.3" />
+      <circle cx="-58" cy="0" r="1.3" />
+      <circle cx="-50.23" cy="-29" r="1.3" />
+      <circle cx="-29" cy="-50.23" r="1.3" />
     </g>
 
-    <!-- Heavy Titanium Bezel & Stepped Outer Casings (Crisp, Solid Dark Metal) -->
-    <circle cx="0" cy="0" r="69" fill="#11131a" stroke="#252c3d" stroke-width="3" />
-    <circle cx="0" cy="0" r="64" fill="#0c0e14" stroke="#3b4459" stroke-width="1.6" />
-    
-    <!-- Outer Screws/Rivets on Bezel -->
-<circle cx="56.36" cy="23.34" r="1.4" fill="#090b10" stroke="#475569" stroke-width="0.6" />
-<circle cx="23.34" cy="56.36" r="1.4" fill="#090b10" stroke="#475569" stroke-width="0.6" />
-<circle cx="-23.34" cy="56.36" r="1.4" fill="#090b10" stroke="#475569" stroke-width="0.6" />
-<circle cx="-56.36" cy="23.34" r="1.4" fill="#090b10" stroke="#475569" stroke-width="0.6" />
-<circle cx="-56.36" cy="-23.34" r="1.4" fill="#090b10" stroke="#475569" stroke-width="0.6" />
-<circle cx="-23.34" cy="-56.36" r="1.4" fill="#090b10" stroke="#475569" stroke-width="0.6" />
-<circle cx="23.34" cy="-56.36" r="1.4" fill="#090b10" stroke="#475569" stroke-width="0.6" />
-<circle cx="56.36" cy="-23.34" r="1.4" fill="#090b10" stroke="#475569" stroke-width="0.6" />
-
-    <circle cx="0" cy="0" r="58.5" fill="#141824" stroke="#1f2535" stroke-width="2" />
+    <!-- Inner Stepped Collar -->
+    <circle cx="0" cy="0" r="54.5" fill="#111622" stroke="#222c3e" stroke-width="2" />
 
     <!-- ======================================================== -->
-    <!-- INTENSE INTERNAL GLOWING PLASMA CHAMBER (ELECTRIC BLINK)  -->
+    <!-- INTENSE INTERNAL GLOWING PLASMA CHAMBER (ELECTRIC PULSE) -->
     <!-- ======================================================== -->
     <g clip-path="url(#innerChamberClip)">
-      <!-- Luminous Deep Plasma Bed (Animated with Real Reactor Electric Blink) -->
+      <!-- Luminous Deep Plasma Bed (Animated with Real Reactor Electric Heartbeat) -->
       <g class="reactor-electric-blinking">
-        <!-- 1. Deep Layer: Full Luminous Electric Cyan Plasma Bed -->
-        <circle cx="0" cy="0" r="54" fill="url(#plasmaRimAura)" opacity="0.95" />
-
-        <!-- 2. Mid Layer: Blazing Volumetric Light Bloom -->
-        <circle cx="0" cy="0" r="50" fill="url(#intensePlasmaCore)" filter="url(#blazingPlasmaGlow)" />
-        
-        <!-- 3. Core Layer: High-Intensity White-Cyan Light -->
-        <circle cx="0" cy="0" r="46" fill="url(#intensePlasmaCore)" opacity="0.98" />
+        <!-- Deep Layer: Full Luminous Electric Cyan Plasma Bed -->
+        <circle cx="0" cy="0" r="53" fill="url(#plasmaRimAura)" opacity="0.95" />
+        <!-- Mid Layer: Blazing Volumetric Light Bloom -->
+        <circle cx="0" cy="0" r="49" fill="url(#intensePlasmaCore)" filter="url(#blazingPlasmaGlow)" />
+        <!-- Core Layer: High-Intensity White-Cyan Light -->
+        <circle cx="0" cy="0" r="45" fill="url(#intensePlasmaCore)" opacity="0.98" />
       </g>
 
-      <!-- Outer Slotted Glowing Track (12 Segments) -->
-      <!-- Inner and Outer Specular Bezel Rings flanking the slotted track -->
-      <circle cx="0" cy="0" r="53.5" fill="none" stroke="#38bdf8" stroke-width="0.8" opacity="0.75" />
-      <circle cx="0" cy="0" r="46.5" fill="none" stroke="#67e8f9" stroke-width="1.2" opacity="0.85" />
+      <!-- Outer Segmented Glowing Track (18 Rectangular Glowing Windows) -->
+      <circle cx="0" cy="0" r="52.5" fill="none" stroke="#38bdf8" stroke-width="0.7" opacity="0.8" />
+      <circle cx="0" cy="0" r="45.5" fill="none" stroke="#67e8f9" stroke-width="0.9" opacity="0.85" />
 
-      <!-- 12 Slotted Ring Dividers (creating the outer rectangular glowing windows) -->
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#0b0e14" stroke-width="3.2" transform="rotate(0)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#334155" stroke-width="1.2" transform="rotate(0)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#67e8f9" stroke-width="0.6" opacity="0.8" transform="rotate(0)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#0b0e14" stroke-width="3.2" transform="rotate(30)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#334155" stroke-width="1.2" transform="rotate(30)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#67e8f9" stroke-width="0.6" opacity="0.8" transform="rotate(30)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#0b0e14" stroke-width="3.2" transform="rotate(60)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#334155" stroke-width="1.2" transform="rotate(60)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#67e8f9" stroke-width="0.6" opacity="0.8" transform="rotate(60)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#0b0e14" stroke-width="3.2" transform="rotate(90)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#334155" stroke-width="1.2" transform="rotate(90)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#67e8f9" stroke-width="0.6" opacity="0.8" transform="rotate(90)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#0b0e14" stroke-width="3.2" transform="rotate(120)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#334155" stroke-width="1.2" transform="rotate(120)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#67e8f9" stroke-width="0.6" opacity="0.8" transform="rotate(120)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#0b0e14" stroke-width="3.2" transform="rotate(150)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#334155" stroke-width="1.2" transform="rotate(150)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#67e8f9" stroke-width="0.6" opacity="0.8" transform="rotate(150)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#0b0e14" stroke-width="3.2" transform="rotate(180)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#334155" stroke-width="1.2" transform="rotate(180)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#67e8f9" stroke-width="0.6" opacity="0.8" transform="rotate(180)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#0b0e14" stroke-width="3.2" transform="rotate(210)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#334155" stroke-width="1.2" transform="rotate(210)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#67e8f9" stroke-width="0.6" opacity="0.8" transform="rotate(210)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#0b0e14" stroke-width="3.2" transform="rotate(240)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#334155" stroke-width="1.2" transform="rotate(240)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#67e8f9" stroke-width="0.6" opacity="0.8" transform="rotate(240)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#0b0e14" stroke-width="3.2" transform="rotate(270)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#334155" stroke-width="1.2" transform="rotate(270)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#67e8f9" stroke-width="0.6" opacity="0.8" transform="rotate(270)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#0b0e14" stroke-width="3.2" transform="rotate(300)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#334155" stroke-width="1.2" transform="rotate(300)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#67e8f9" stroke-width="0.6" opacity="0.8" transform="rotate(300)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#0b0e14" stroke-width="3.2" transform="rotate(330)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#334155" stroke-width="1.2" transform="rotate(330)" />
-<line x1="0" y1="-46.5" x2="0" y2="-53.5" stroke="#67e8f9" stroke-width="0.6" opacity="0.8" transform="rotate(330)" />
+      <!-- 18 Slotted Metallic Rib Dividers -->
+      <g>
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#0b0e14" stroke-width="3" transform="rotate(0)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#2a3548" stroke-width="1.0" transform="rotate(0)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#0b0e14" stroke-width="3" transform="rotate(20)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#2a3548" stroke-width="1.0" transform="rotate(20)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#0b0e14" stroke-width="3" transform="rotate(40)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#2a3548" stroke-width="1.0" transform="rotate(40)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#0b0e14" stroke-width="3" transform="rotate(60)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#2a3548" stroke-width="1.0" transform="rotate(60)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#0b0e14" stroke-width="3" transform="rotate(80)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#2a3548" stroke-width="1.0" transform="rotate(80)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#0b0e14" stroke-width="3" transform="rotate(100)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#2a3548" stroke-width="1.0" transform="rotate(100)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#0b0e14" stroke-width="3" transform="rotate(120)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#2a3548" stroke-width="1.0" transform="rotate(120)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#0b0e14" stroke-width="3" transform="rotate(140)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#2a3548" stroke-width="1.0" transform="rotate(140)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#0b0e14" stroke-width="3" transform="rotate(160)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#2a3548" stroke-width="1.0" transform="rotate(160)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#0b0e14" stroke-width="3" transform="rotate(180)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#2a3548" stroke-width="1.0" transform="rotate(180)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#0b0e14" stroke-width="3" transform="rotate(200)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#2a3548" stroke-width="1.0" transform="rotate(200)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#0b0e14" stroke-width="3" transform="rotate(220)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#2a3548" stroke-width="1.0" transform="rotate(220)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#0b0e14" stroke-width="3" transform="rotate(240)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#2a3548" stroke-width="1.0" transform="rotate(240)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#0b0e14" stroke-width="3" transform="rotate(260)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#2a3548" stroke-width="1.0" transform="rotate(260)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#0b0e14" stroke-width="3" transform="rotate(280)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#2a3548" stroke-width="1.0" transform="rotate(280)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#0b0e14" stroke-width="3" transform="rotate(300)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#2a3548" stroke-width="1.0" transform="rotate(300)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#0b0e14" stroke-width="3" transform="rotate(320)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#2a3548" stroke-width="1.0" transform="rotate(320)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#0b0e14" stroke-width="3" transform="rotate(340)" />
+        <line x1="0" y1="-45.5" x2="0" y2="-52.5" stroke="#2a3548" stroke-width="1.0" transform="rotate(340)" />
+      </g>
 
-      <!-- Inner Circular Metal Bezel (Heavy Framework Ring inside the slotted track) -->
-      <circle cx="0" cy="0" r="44.5" fill="none" stroke="#080b10" stroke-width="4.2" />
-      <circle cx="0" cy="0" r="44.5" fill="none" stroke="#334155" stroke-width="1.4" />
-      <circle cx="0" cy="0" r="44.5" fill="none" stroke="#67e8f9" stroke-width="0.8" opacity="0.85" />
+      <!-- Inner Circular Framework Ring (Flanking triangular chamber) -->
+      <circle cx="0" cy="0" r="44" fill="none" stroke="#080b10" stroke-width="3.6" />
+      <circle cx="0" cy="0" r="44" fill="none" stroke="#283449" stroke-width="1.4" />
+      <circle cx="0" cy="0" r="44" fill="none" stroke="#67e8f9" stroke-width="0.7" opacity="0.7" />
 
       <!-- ======================================================== -->
-      <!-- EXACT MARK VI TRIANGULAR CHASSIS & APERTURE FRAMEWORK    -->
+      <!-- EXACT STRAIGHT MARK VI TRIANGULAR CHASSIS & FRAMEWORK    -->
+      <!-- Inverted Equilateral Triangle (Pointing Straight Down ▼)  -->
       <!-- ======================================================== -->
 
-      <!-- 6 Outer Structural Struts (2 per side) -->
-<line x1="19.50" y1="-14.00" x2="41.71" y2="-14.00" stroke="#080b10" stroke-width="3.5" stroke-linecap="round" />
-<line x1="19.50" y1="-14.00" x2="41.71" y2="-14.00" stroke="#283347" stroke-width="1.4" stroke-linecap="round" />
-<line x1="19.50" y1="-14.00" x2="41.71" y2="-14.00" stroke="#67e8f9" stroke-width="0.7" stroke-linecap="round" opacity="0.85" />
-<line x1="19.50" y1="14.00" x2="41.71" y2="14.00" stroke="#080b10" stroke-width="3.5" stroke-linecap="round" />
-<line x1="19.50" y1="14.00" x2="41.71" y2="14.00" stroke="#283347" stroke-width="1.4" stroke-linecap="round" />
-<line x1="19.50" y1="14.00" x2="41.71" y2="14.00" stroke="#67e8f9" stroke-width="0.7" stroke-linecap="round" opacity="0.85" />
-<line x1="2.37" y1="23.89" x2="-8.73" y2="43.12" stroke="#080b10" stroke-width="3.5" stroke-linecap="round" />
-<line x1="2.37" y1="23.89" x2="-8.73" y2="43.12" stroke="#283347" stroke-width="1.4" stroke-linecap="round" />
-<line x1="2.37" y1="23.89" x2="-8.73" y2="43.12" stroke="#67e8f9" stroke-width="0.7" stroke-linecap="round" opacity="0.85" />
-<line x1="-21.87" y1="9.89" x2="-32.98" y2="29.12" stroke="#080b10" stroke-width="3.5" stroke-linecap="round" />
-<line x1="-21.87" y1="9.89" x2="-32.98" y2="29.12" stroke="#283347" stroke-width="1.4" stroke-linecap="round" />
-<line x1="-21.87" y1="9.89" x2="-32.98" y2="29.12" stroke="#67e8f9" stroke-width="0.7" stroke-linecap="round" opacity="0.85" />
-<line x1="-21.87" y1="-9.89" x2="-32.98" y2="-29.12" stroke="#080b10" stroke-width="3.5" stroke-linecap="round" />
-<line x1="-21.87" y1="-9.89" x2="-32.98" y2="-29.12" stroke="#283347" stroke-width="1.4" stroke-linecap="round" />
-<line x1="-21.87" y1="-9.89" x2="-32.98" y2="-29.12" stroke="#67e8f9" stroke-width="0.7" stroke-linecap="round" opacity="0.85" />
-<line x1="2.37" y1="-23.89" x2="-8.73" y2="-43.12" stroke="#080b10" stroke-width="3.5" stroke-linecap="round" />
-<line x1="2.37" y1="-23.89" x2="-8.73" y2="-43.12" stroke="#283347" stroke-width="1.4" stroke-linecap="round" />
-<line x1="2.37" y1="-23.89" x2="-8.73" y2="-43.12" stroke="#67e8f9" stroke-width="0.7" stroke-linecap="round" opacity="0.85" />
+      <!-- 6 Outer Structural Struts (2 per side, perpendicular to sides) -->
+      <use href="#outerStrutPair" />
+      <use href="#outerStrutPair" transform="rotate(120)" />
+      <use href="#outerStrutPair" transform="rotate(240)" />
 
       <!-- Main Outer Triangular Armor Frame (Mark VI) -->
-      <path d="M -39.00,0.00 L 19.50,-33.77 L 19.50,33.77 Z" fill="none" stroke="#080b10" stroke-width="4.2" stroke-linejoin="round" />
-      <path d="M -39.00,0.00 L 19.50,-33.77 L 19.50,33.77 Z" fill="none" stroke="#283347" stroke-width="1.6" stroke-linejoin="round" />
-      <path d="M -39.00,0.00 L 19.50,-33.77 L 19.50,33.77 Z" fill="none" stroke="#67e8f9" stroke-width="0.8" stroke-linejoin="round" opacity="0.85" />
+      <path d="M 0,38 L 32.91,-19 L -32.91,-19 Z" fill="none" stroke="#080b10" stroke-width="4.0" stroke-linejoin="round" />
+      <path d="M 0,38 L 32.91,-19 L -32.91,-19 Z" fill="none" stroke="#283449" stroke-width="1.6" stroke-linejoin="round" />
+      <path d="M 0,38 L 32.91,-19 L -32.91,-19 Z" fill="none" stroke="#67e8f9" stroke-width="0.8" stroke-linejoin="round" opacity="0.8" />
 
-      <!-- 3 Radial Corner Struts (Connecting Inner Triangle to Outer Triangle) -->
-<line x1="-16.50" y1="0.00" x2="-39.00" y2="0.00" stroke="#080b10" stroke-width="4.0" stroke-linecap="round" />
-<line x1="-16.50" y1="0.00" x2="-39.00" y2="0.00" stroke="#283347" stroke-width="1.6" stroke-linecap="round" />
-<line x1="-16.50" y1="0.00" x2="-39.00" y2="0.00" stroke="#67e8f9" stroke-width="0.8" stroke-linecap="round" opacity="0.85" />
-<line x1="8.25" y1="-14.29" x2="19.50" y2="-33.77" stroke="#080b10" stroke-width="4.0" stroke-linecap="round" />
-<line x1="8.25" y1="-14.29" x2="19.50" y2="-33.77" stroke="#283347" stroke-width="1.6" stroke-linecap="round" />
-<line x1="8.25" y1="-14.29" x2="19.50" y2="-33.77" stroke="#67e8f9" stroke-width="0.8" stroke-linecap="round" opacity="0.85" />
-<line x1="8.25" y1="14.29" x2="19.50" y2="33.77" stroke="#080b10" stroke-width="4.0" stroke-linecap="round" />
-<line x1="8.25" y1="14.29" x2="19.50" y2="33.77" stroke="#283347" stroke-width="1.6" stroke-linecap="round" />
-<line x1="8.25" y1="14.29" x2="19.50" y2="33.77" stroke="#67e8f9" stroke-width="0.8" stroke-linecap="round" opacity="0.85" />
+      <!-- 3 Radial Corner Struts (Connecting Inner Triangle to Outer Triangle Vertices) -->
+      <use href="#cornerStrut" />
+      <use href="#cornerStrut" transform="rotate(120)" />
+      <use href="#cornerStrut" transform="rotate(240)" />
 
-      <!-- Inner Triangular Frame (Surrounding Central Glowing Aperture) -->
-      <path d="M -16.50,0.00 L 8.25,-14.29 L 8.25,14.29 Z" fill="none" stroke="#080b10" stroke-width="3.8" stroke-linejoin="round" />
-      <path d="M -16.50,0.00 L 8.25,-14.29 L 8.25,14.29 Z" fill="none" stroke="#283347" stroke-width="1.4" stroke-linejoin="round" />
-      <path d="M -16.50,0.00 L 8.25,-14.29 L 8.25,14.29 Z" fill="none" stroke="#67e8f9" stroke-width="0.8" stroke-linejoin="round" opacity="0.9" />
+      <!-- Inner Triangular Frame (Surrounding Central Glowing Core) -->
+      <path d="M 0,17 L 14.72,-8.5 L -14.72,-8.5 Z" fill="none" stroke="#080b10" stroke-width="3.6" stroke-linejoin="round" />
+      <path d="M 0,17 L 14.72,-8.5 L -14.72,-8.5 Z" fill="none" stroke="#283449" stroke-width="1.4" stroke-linejoin="round" />
+      <path d="M 0,17 L 14.72,-8.5 L -14.72,-8.5 Z" fill="none" stroke="#67e8f9" stroke-width="0.8" stroke-linejoin="round" opacity="0.85" />
 
       <!-- ======================================================== -->
       <!-- BLAZING WHITE-HOT CENTRAL TRIANGLE (PULSING CORE LIGHT)  -->
       <!-- ======================================================== -->
       <g class="core-electric-blinking">
         <!-- Intense Blazing White-Hot Core Plasma in Central Triangle -->
-        <path d="M -15.18,0.00 L 7.59,-13.15 L 7.59,13.15 Z" fill="#67e8f9" filter="url(#blazingPlasmaGlow)" opacity="0.95" />
-        <path d="M -15.18,0.00 L 7.59,-13.15 L 7.59,13.15 Z" fill="#ffffff" filter="url(#whiteHotFlare)" />
+        <path d="M 0,15.2 L 13.17,-7.6 L -13.17,-7.6 Z" fill="#67e8f9" filter="url(#blazingPlasmaGlow)" opacity="0.95" />
+        <path d="M 0,15.2 L 13.17,-7.6 L -13.17,-7.6 Z" fill="#ffffff" filter="url(#whiteHotFlare)" />
       </g>
 
-      <!-- Curved Specular Glass Flare Arc (Realistic Lens Cover) -->
+      <!-- Curved Specular Glass Flare Arc (Realistic Convex Lens Cover) -->
       <path d="M -46,-20 A 52 52 0 0 1 40,-32 A 52 52 0 0 0 -46,-20 Z" fill="url(#glassReflection)" />
     </g>
   </g>

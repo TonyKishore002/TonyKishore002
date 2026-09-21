@@ -14,9 +14,24 @@
 
 ### 🛠 Tech Arsenal
 
-<div align="center">
-  <img src="./assets/tech-arsenal.svg" alt="Tony K's Tech Arsenal" width="100%" />
-</div>
+<p align="center">
+  <a href="https://www.python.org/" target="_blank" rel="noreferrer"><img src="./assets/icons/python.svg" alt="Python" width="46" height="46" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="./assets/icons/javascript.svg" alt="JavaScript" width="46" height="46" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://react.dev/" target="_blank" rel="noreferrer"><img src="./assets/icons/react.svg" alt="React" width="46" height="46" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://nextjs.org/" target="_blank" rel="noreferrer"><img src="./assets/icons/nextjs.svg" alt="Next.js" width="46" height="46" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://nodejs.org/" target="_blank" rel="noreferrer"><img src="./assets/icons/nodejs.svg" alt="Node.js" width="46" height="46" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://expressjs.com/" target="_blank" rel="noreferrer"><img src="./assets/icons/express.svg" alt="Express" width="46" height="46" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noreferrer"><img src="./assets/icons/fastapi.svg" alt="FastAPI" width="46" height="46" /></a>
+</p>
+<p align="center">
+  <a href="https://xgboost.readthedocs.io/" target="_blank" rel="noreferrer"><img src="./assets/icons/xgboost.svg" alt="XGBoost" width="46" height="46" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://opencv.org/" target="_blank" rel="noreferrer"><img src="./assets/icons/opencv.svg" alt="OpenCV" width="46" height="46" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"><img src="./assets/icons/mongodb.svg" alt="MongoDB" width="46" height="46" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://supabase.com/" target="_blank" rel="noreferrer"><img src="./assets/icons/supabase.svg" alt="Supabase" width="46" height="46" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://git-scm.com/" target="_blank" rel="noreferrer"><img src="./assets/icons/git.svg" alt="Git" width="46" height="46" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/" target="_blank" rel="noreferrer"><img src="./assets/icons/github.svg" alt="GitHub" width="46" height="46" /></a>&nbsp;&nbsp;&nbsp;
+  <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer"><img src="./assets/icons/vscode.svg" alt="VS Code" width="46" height="46" /></a>
+</p>
 
 <div align="center">
   <img src="./assets/section-divider.svg" width="100%" />
@@ -31,7 +46,7 @@ A Windows-integrated local AI environment designed to interact with the computer
 #### TrustAI
 An AI output reliability and risk analysis platform designed to analyze AI-generated responses and identify potential risks.
 - **Technologies:** Python · FastAPI · Machine Learning  
-- *Status: In active development*
+- *Status: Prototype*
 
 #### DNS_X
 An AI-powered DNS infrastructure monitoring system focused on detecting anomalies and identifying possible infrastructure problems.
